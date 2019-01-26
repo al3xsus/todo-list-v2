@@ -189,7 +189,7 @@ class TaskEditor extends React.PureComponent {
                             size='small'>
                             <Header icon='browser' content='Подтвердите удаление'/>
                             <Modal.Content>
-                                <h3>Вы действительно хотите удалить приложение {task.title}?</h3>
+                                <h3>Вы действительно хотите удалить задачу {task.title}?</h3>
                             </Modal.Content>
                             <Modal.Actions>
                                 <Button

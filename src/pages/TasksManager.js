@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import {Button, Checkbox, Container, Header, Icon, Select, Table} from 'semantic-ui-react'
+import {Button, Container, Header, Icon, Select, Table} from 'semantic-ui-react'
 import moment from 'moment'
 
 import TaskEditor from '../components/TaskEditor';
@@ -108,10 +108,15 @@ class TasksManager extends Component {
                 </Table.Cell>
                 <Table.Cell>{this.showImportance(task)}</Table.Cell>
                 <Table.Cell>
-                    {moment(task.todo_date).format("DD/MM/YYYY, HH:mm")}
+                    {task.todo_date !== null ? moment(task.todo_date).format("DD/MM/YYYY, HH:mm") : ''}
                 </Table.Cell>
-                <Table.Cell>
-                    <Checkbox readOnly={true} toggle={true} checked={task.done}/>
+                <Table.Cell textAlign={"center"}>
+                    <Icon
+                        className={task.done ? "check" : "ban"}
+                        fitted={true}
+                        size={"large"}
+                        color={task.done ? "green" : "grey"}
+                    />
                 </Table.Cell>
                 <Table.Cell>
                     {task.done_date !== null ? moment(task.done_date).format("DD/MM/YYYY, HH:mm") : ''}

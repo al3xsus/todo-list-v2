@@ -55,10 +55,11 @@ class TaskEditor extends React.PureComponent {
     };
 
     handleTimeChange = (field, change) => {
+        console.log(field, change);
         this.setState({
             task: {
                 ...this.state.task,
-                [field]: moment(change).toISOString(),
+                [field]: change !== undefined ? moment(change).toISOString() : undefined,
             }
         })
     };
@@ -125,7 +126,8 @@ class TaskEditor extends React.PureComponent {
                             onChange={this.handleFieldChange('importance')}/>
                     </Form.Field>
                     <Form.Field>
-                        <label>Когда нужно выполнить</label>
+                        <label>Когда нужно выполнить
+                            - {task.todo_date !== null && task.todo_date !== undefined ? moment(task.todo_date).format("DD/MM/YYYY, HH:mm") : 'Не задано'}</label>
                         <DatetimeInput
                             datetime={moment(todo_date)}
                             onChange={(change) => this.handleTimeChange('todo_date', change)}

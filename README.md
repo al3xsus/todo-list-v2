@@ -42,3 +42,13 @@
 ### `yarn global add serve`
 ### `serve -s build`
 Для запуска собранного
+
+## Скриншоты
+
+![Создание](screenshots/screen_1.png?raw=true "Создание")
+
+![Просмотр](screenshots/screen_2.png?raw=true "Просмотр")
+
+![Редактирование](screenshots/screen_3.png?raw=true "Редактирование")
+
+![Удаление](screenshots/screen_4.png?raw=true "Удаление")

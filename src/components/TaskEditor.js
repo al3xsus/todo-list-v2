@@ -85,9 +85,9 @@ class TaskEditor extends React.PureComponent {
 
     render() {
         const options = [
-            {key: 'normal', value: 'normal', text: 'normal'},
-            {key: 'high', value: 'high', text: 'high'},
-            {key: 'ultra', value: 'ultra', text: 'ultra'}
+            {key: 'normal', value: 'normal', text: 'Обычная'},
+            {key: 'high', value: 'high', text: 'Важная'},
+            {key: 'ultra', value: 'ultra', text: 'Очень важная'}
         ];
         const {show, onClose, data, onSaveTask, onDeleteTask} = this.props;
         const {task: {title, description, importance, todo_date, done}, task} = this.state;
@@ -117,7 +117,7 @@ class TaskEditor extends React.PureComponent {
                             value={description}/>
                     </Form.Field>
                     <Form.Field>
-                        <label>Важность</label>
+                        <label>Степень важности</label>
                         <Select
                             style={{width: "100%"}}
                             options={options}

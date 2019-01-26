@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import {Button, Checkbox, Container, Header, Select, Table} from 'semantic-ui-react'
+import {Button, Checkbox, Container, Header, Icon, Select, Table} from 'semantic-ui-react'
 import moment from 'moment'
 
 import TaskEditor from '../components/TaskEditor';
@@ -106,7 +106,7 @@ class TasksManager extends Component {
                 <Table.Cell>
                     {task.description.length > 20 ? task.description.slice(0, 20) + ' ...' : task.description}
                 </Table.Cell>
-                <Table.Cell>{task.importance}</Table.Cell>
+                <Table.Cell>{this.showImportance(task)}</Table.Cell>
                 <Table.Cell>
                     {moment(task.todo_date).format("DD/MM/YYYY, HH:mm")}
                 </Table.Cell>
@@ -134,10 +134,23 @@ class TasksManager extends Component {
         this.setState({filter: change.value})
     };
 
+    showImportance = (task) => {
+        if (task.importance === 'normal') return <Icon className={'attention'}/>;
+        else if (task.importance === 'high') return <div>
+            <Icon className={'attention'}/>
+            <Icon className={'attention'}/>
+        </div>;
+        else return <div>
+                <Icon className={'attention'}/>
+                <Icon className={'attention'}/>
+                <Icon className={'attention'}/>
+            </div>
+    };
+
     render() {
         const options = [
             {key: 'all', value: 'all', text: 'Все задачи'},
-            {key: 'normal', value: 'normal', text: 'Нормальной важности'},
+            {key: 'normal', value: 'normal', text: 'Обычной важности'},
             {key: 'high', value: 'high', text: 'Высокой важности'},
             {key: 'ultra', value: 'ultra', text: 'Очень высокой важности'}
         ];

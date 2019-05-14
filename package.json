@@ -5,7 +5,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
-    "dotenv": "^6.2.0",
+    "dotenv": "^8.0.0",
     "epilogue": "^0.7.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.15.0",
@@ -16,10 +16,10 @@
     "react": "^16.7.0",
     "react-datetime-inputs": "^0.0.6",
     "react-dom": "^16.7.0",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.3",
-    "semantic-ui-calendar-react": "^0.13.0",
-    "semantic-ui-react": "^0.84.0",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "^3.0.1",
+    "semantic-ui-calendar-react": "^0.15.0",
+    "semantic-ui-react": "^0.87.1",
     "sequelize": ">=5.3.0",
     "sqlite": "^3.0.0"
   },
@@ -40,7 +40,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "flow-bin": "^0.91.0",
+    "flow-bin": "^0.98.1",
     "npm-run-all": "^4.1.5"
   }
 }
